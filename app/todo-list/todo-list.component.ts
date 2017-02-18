@@ -1,13 +1,5 @@
-import {
-    Component
-} from '@angular/core';
-import {
-    Todo
-} from '../shared/todo';
-import {
-    todos
-} from '../shared/data';
-
+import {Component, Input} from '@angular/core';
+import {Todo} from '../shared/todo';
 
 @Component({
     moduleId: module.id,
@@ -16,7 +8,7 @@ import {
     styleUrls: ['todo-list.component.css']
 })
 export class TodoListComponent {
-    todos: Todo[] = todos;
+    @Input() todos: Todo[];    
 
     toggle(todo: Todo) {
         todo.complited = !todo.complited;
